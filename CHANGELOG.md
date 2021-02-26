@@ -1,3 +1,12 @@
+# [0.1.2] 
+
+# Fix
+
+- Removed unused dependencies.
+- Fix `package.json` version.
+- Fix function to fetch reddit posts, changed to async/await.
+- Added basic doc to README.md
+
 # [0.1.1] 
 
 # Fix

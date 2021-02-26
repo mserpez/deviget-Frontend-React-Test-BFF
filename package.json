@@ -1,13 +1,12 @@
 {
-  "name": "be",
-  "version": "1.0.0",
+  "name": "bff",
+  "version": "0.1.2",
   "description": "",
   "main": "src/index.ts",
   "scripts": {
     "tsc": "tsc",
     "start": "yarn start:local",
     "start:local": "cross-env NODE_ENV=local ts-node-dev --respawn --transpile-only ./src/index.ts",
-    "start:dev": "cross-env NODE_ENV=dev ts-node-dev --respawn --transpile-only ./src/index.ts",
     "start:prod": "yarn build && cross-env NODE_ENV=prod node ./dist/index.js",
     "build": "tsc",
     "lint:check": "eslint . --ext .ts",
@@ -31,7 +30,6 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "@prisma/cli": "^2.12.1",
     "@types/cors": "^2.8.8",
     "@types/express": "^4.17.9",
     "@types/node": "^14.14.10",

@@ -8,6 +8,8 @@ The goal is create a simple Reddit client that shows the top 50 entries from Red
 
 ## Getting Stated locally
 
+- Copy file `.env.example` and rename the copy to `.env.local`.
+- Change port if you want in `.env.local`.
 - Run in project root `yarn` or `npm install`.
 - Run `yarn start` or `npm start`.
 
@@ -22,3 +24,10 @@ The goal is create a simple Reddit client that shows the top 50 entries from Red
 ## Testing
 
 TODO.
+
+## Docs
+
+Documentation available on `localhost:4000/api-docs`.
+
+IMPORTANT: This port is the default application port, if you change it, docs api will be available in new port.
+NOTE: Documentation won't be available on production mode.

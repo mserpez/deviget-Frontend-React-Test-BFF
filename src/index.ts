@@ -9,7 +9,7 @@ import Server from './server';
 customEnv.env(true);
 
 // Parallelism
-/*const CPUS = os.cpus();
+const CPUS = os.cpus();
 
 if (cluster.isMaster) {
     CPUS.forEach(function () {
@@ -26,17 +26,19 @@ if (cluster.isMaster) {
         // Ensuring a new cluster will start if an old one dies
         cluster.fork();
     });
-} else {*/
-// Define the port to use
-const PORT: number = Number(process.env.APP_PORT) || 4000;
+} else {
+    // Define the port to use
+    const PORT: number = Number(process.env.APP_PORT) || 4000;
+    const HOST: string = process.env.APP_HOST || 'localhost';
 
-// Create a new express application instance
-const server = Server.init(PORT);
+    // Create a new express application instance
+    const server = Server.init(PORT, HOST);
 
-server.start(() => {
-    // eslint-disable-next-line no-console
-    console.log(`🚀 Server is listening http://localhost:${PORT}`);
-});
+    server.start(() => {
+        // eslint-disable-next-line no-console
+        console.log(`🚀 Server is listening http://${HOST}:${PORT}`);
+        console.log(`🚀 Docs available http://${HOST}:${PORT}/api-docs`);
+    });
 
 
-//}
+}

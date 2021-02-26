@@ -1,3 +1,12 @@
+# [0.1.3] 
+
+# Fix, Added
+
+- Added Swagger docs.
+- Added missing dependence `node-fetch`.
+- Added `.env.example` with Reddit `Post` model.
+- Updated readme.
+
 # [0.1.2] 
 
 # Fix

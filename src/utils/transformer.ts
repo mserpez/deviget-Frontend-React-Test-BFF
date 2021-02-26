@@ -25,9 +25,7 @@ export function transformTop50Data(redditData?: IRedditTop50Root) {
         finalData.push(newPost)
     })
 
-
     return finalData
-
 }
 
 
@@ -40,7 +38,6 @@ function getMediumImage(post: IRedditTop50DataItem) {
     }
 
     return imgUrl.replace(/\&amp\;/g, '&');
-
 }
 
 function getBiggestImage(post: IRedditTop50DataItem) {
@@ -52,5 +49,4 @@ function getBiggestImage(post: IRedditTop50DataItem) {
     }
 
     return imgUrl.replace(/\&amp\;/g, '&');
-
 }

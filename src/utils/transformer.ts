@@ -16,7 +16,8 @@ export function transformTop50Data(redditData?: IRedditTop50Root) {
             commentsQty: post.data.num_comments,
             createdAt: post.data.created_utc,
             id: post.data.id,
-            photoURL: _get(post, 'post.data.preview.images.0.resolutions.3.url'),
+            photoURL: getMediumImage(post.data),
+            photoURLBig: getBiggestImage(post.data),
             thumbnail: post.data.thumbnail,
             title: post.data.title,
         };
@@ -29,3 +30,27 @@ export function transformTop50Data(redditData?: IRedditTop50Root) {
 
 }
 
+
+function getMediumImage(post: IRedditTop50DataItem) {
+    let imgUrl = post.thumbnail;
+    const images = _get(post, 'preview.images.0.resolutions', []);
+
+    if (images.length > 2) {
+        imgUrl = _get(images[images.length - 2], 'url', post.thumbnail);
+    }
+
+    return imgUrl.replace(/\&amp\;/g, '&');
+
+}
+
+function getBiggestImage(post: IRedditTop50DataItem) {
+    let imgUrl = post.thumbnail;
+    const images = _get(post, 'preview.images.0.resolutions', []);
+
+    if (!!images.length) {
+        imgUrl = _get(images[images.length - 1], 'url', getMediumImage(post));
+    }
+
+    return imgUrl.replace(/\&amp\;/g, '&');
+
+}

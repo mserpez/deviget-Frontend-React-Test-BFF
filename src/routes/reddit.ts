@@ -6,7 +6,11 @@ import { transformTop50Data } from '../utils/transformer';
 const router = Router();
 
 router.get('/posts', (req: Request, res: Response) => {
-    return fetch(REDDIT_TOP_50_URL)
+
+    const afterPagination = req.query.after;
+    const url = `${REDDIT_TOP_50_URL}&after=${afterPagination}`;
+
+    return fetch(url)
         .then(response => response.json())
         .then(response => {
             res.json(transformTop50Data(response));

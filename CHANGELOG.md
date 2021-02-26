@@ -1,3 +1,9 @@
+# [0.1.1] 
+
+# Fix
+
+- Fix image sizes.
+
 # [0.1.0] 
 
 # Added

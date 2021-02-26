@@ -4,6 +4,7 @@ declare interface IPost {
     createdAt: number
     id: string
     photoURL: string
+    photoURLBig: string
     thumbnail: string
     title: string
 }

@@ -1,3 +1,9 @@
+# [0.2.0] 
+
+# Added
+
+- Added Dockerfile.
+
 # [0.1.3] 
 
 # Fix, Added

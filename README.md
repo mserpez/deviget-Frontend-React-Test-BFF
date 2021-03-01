@@ -13,6 +13,11 @@ The goal is create a simple Reddit client that shows the top 50 entries from Red
 - Run in project root `yarn` or `npm install`.
 - Run `yarn start` or `npm start`.
 
+## Getting Stated with docker
+
+- Run `docker build -t bff:latest .`.
+- Run `docker run -d --name bff bff`.
+
 ## Scripts
 
 - `build`: It's in charge to build ts project and transpile to js.

@@ -28,7 +28,7 @@ if (cluster.isMaster) {
     });
 } else {
     // Define the port to use
-    const PORT: number = Number(process.env.APP_PORT) || 4000;
+    const PORT: number = Number(process.env.APP_PORT) || 4500;
     const HOST: string = process.env.APP_HOST || 'localhost';
 
     // Create a new express application instance
